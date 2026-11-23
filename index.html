@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OVO — Entretenimento Digital</title>
+<meta name="description" content="OVO — o app mais absurdo da App Store. Um ovo ultrarrealista sobre um cálice. Incline o telefone. Espere 15 minutos. E veja o que acontece. $0.99.">
+<meta name="theme-color" content="#0A0A08">
+<meta property="og:title" content="OVO — Entretenimento Digital">
+<meta property="og:description" content="Um ovo ultrarrealista sobre um cálice. Incline o telefone. Espere. E veja o que acontece.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥚</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0A0A08;
+  --gold:#C4A265;
+  --gold-light:#D4B87A;
+  --cream:#F0E6D3;
+  --bronze:#8B7355;
+  --text:#E8E4DD;
+  --text-dim:#9A9590;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  background:var(--black);
+  color:var(--text);
+  font-family:'Outfit',sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;min-height:100dvh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  position:relative;
+  padding:2rem;
+  text-align:center;
+}
+.hero::before{
+  content:'';position:absolute;
+  width:420px;height:420px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(196,162,101,.12) 0%,transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-55%);
+  pointer-events:none;
+  animation:pulse 6s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:.6;transform:translate(-50%,-55%) scale(1)}
+  50%{opacity:1;transform:translate(-50%,-55%) scale(1.08)}
+}
+
+.egg-container{
+  position:relative;
+  width:160px;height:210px;
+  margin-bottom:3rem;
+  animation:float 5s ease-in-out infinite;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+.egg-container svg{width:100%;height:100%}
+
+.hero-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.2rem,8vw,6rem);
+  font-weight:300;
+  letter-spacing:.35em;
+  color:var(--gold);
+  margin-bottom:.5rem;
+  text-indent:.35em;
+}
+.hero-sub{
+  font-size:.85rem;
+  letter-spacing:.25em;
+  color:var(--text-dim);
+  font-weight:300;
+  text-transform:lowercase;
+}
+
+.scroll-cue{
+  position:absolute;bottom:2.5rem;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  color:var(--bronze);font-size:.7rem;letter-spacing:.15em;
+}
+.scroll-cue span{
+  display:block;width:1px;height:28px;
+  background:linear-gradient(to bottom,var(--bronze),transparent);
+  animation:scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse{
+  0%,100%{opacity:.3;height:28px}
+  50%{opacity:1;height:38px}
+}
+
+/* ── SECTIONS ── */
+section{
+  padding:clamp(4rem,10vw,8rem) clamp(1.5rem,5vw,3rem);
+  max-width:720px;
+  margin:0 auto;
+}
+
+.section-label{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,4vw,2.4rem);
+  font-weight:300;
+  color:var(--gold);
+  margin-bottom:1.5rem;
+  line-height:1.3;
+}
+
+.section-text{
+  font-size:clamp(.95rem,1.1vw,1.05rem);
+  color:var(--text-dim);
+  max-width:520px;
+  line-height:1.9;
+}
+
+/* ── EXPERIENCE ── */
+.experience{text-align:left}
+
+.moments{
+  display:flex;flex-direction:column;gap:3rem;
+  margin-top:3rem;
+  padding-left:1.5rem;
+  border-left:1px solid rgba(196,162,101,.15);
+}
+.moment{display:flex;flex-direction:column;gap:.4rem}
+.moment-time{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:400;
+  color:var(--gold-light);
+}
+.moment-desc{
+  font-size:.9rem;color:var(--text-dim);
+  max-width:440px;
+}
+
+/* ── PHILOSOPHY ── */
+.philosophy{
+  text-align:center;
+  border-top:1px solid rgba(196,162,101,.08);
+  border-bottom:1px solid rgba(196,162,101,.08);
+  padding-top:clamp(5rem,12vw,9rem);
+  padding-bottom:clamp(5rem,12vw,9rem);
+}
+.philosophy .section-label{
+  font-size:clamp(1.8rem,4.5vw,2.8rem);
+  font-style:italic;
+  max-width:500px;
+  margin:0 auto 1.5rem;
+}
+
+/* ── DOWNLOAD ── */
+.download{
+  text-align:center;
+  padding-bottom:clamp(5rem,12vw,8rem);
+}
+.price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,7vw,5rem);
+  font-weight:300;
+  color:var(--cream);
+  margin:1.5rem 0 .3rem;
+}
+.price-note{
+  font-size:.8rem;
+  color:var(--bronze);
+  margin-bottom:2.5rem;
+  letter-spacing:.08em;
+}
+.cta{
+  display:inline-flex;align-items:center;gap:.7rem;
+  padding:.95rem 2.2rem;
+  border:1px solid var(--gold);
+  border-radius:0;
+  color:var(--gold);
+  font-family:'Outfit',sans-serif;
+  font-size:.85rem;font-weight:400;
+  letter-spacing:.12em;
+  text-decoration:none;
+  transition:all .4s ease;
+  background:transparent;
+}
+.cta:hover{
+  background:var(--gold);
+  color:var(--black);
+}
+.cta svg{width:18px;height:18px;fill:currentColor}
+
+/* ── FOOTER ── */
+footer{
+  text-align:center;
+  padding:2rem 1.5rem 3rem;
+  font-size:.7rem;
+  color:var(--bronze);
+  letter-spacing:.08em;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .hero-brand{letter-spacing:.2em;text-indent:.2em}
+  .egg-container{width:120px;height:155px;margin-bottom:2rem}
+  .moments{padding-left:1rem}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .egg-container,.hero::before,.scroll-cue span{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="egg-container">
+    <svg viewBox="0 0 160 210" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="eggGrad" cx="45%" cy="35%" r="55%">
+          <stop offset="0%" stop-color="#F5EEE0"/>
+          <stop offset="40%" stop-color="#E8DCC8"/>
+          <stop offset="100%" stop-color="#C4B599"/>
+        </radialGradient>
+        <radialGradient id="eggShadow" cx="50%" cy="95%">
+          <stop offset="0%" stop-color="rgba(196,162,101,.15)"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="2" result="blur"/>
+          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+      </defs>
+      <!-- chalice base -->
+      <ellipse cx="80" cy="198" rx="32" ry="6" fill="rgba(196,162,101,.08)"/>
+      <path d="M68 195 L72 170 Q80 168 88 170 L92 195 Z" fill="none" stroke="var(--gold)" stroke-width=".6" opacity=".5"/>
+      <ellipse cx="80" cy="168" rx="10" ry="3" fill="none" stroke="var(--gold)" stroke-width=".6" opacity=".4"/>
+      <line x1="80" y1="165" x2="80" y2="148" stroke="var(--gold)" stroke-width=".6" opacity=".5"/>
+      <ellipse cx="80" cy="145" rx="22" ry="8" fill="none" stroke="var(--gold)" stroke-width=".6" opacity=".3"/>
+      <!-- egg -->
+      <ellipse cx="80" cy="90" rx="48" ry="62" fill="url(#eggGrad)" filter="url(#glow)"
+        style="transform-origin:80px 90px"/>
+      <!-- highlight -->
+      <ellipse cx="68" cy="68" rx="18" ry="24" fill="rgba(255,255,255,.12)" transform="rotate(-15 68 68)"/>
+    </svg>
+  </div>
+  <h1 class="hero-brand">OVO</h1>
+  <p class="hero-sub">entretenimento digital</p>
+  <div class="scroll-cue">
+    <span></span>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience">
+  <div class="reveal">
+    <h2 class="section-label">A experiência</h2>
+    <p class="section-text">Um ovo. Um cálice. O silêncio da sua tela. Nada mais.</p>
+  </div>
+  <div class="moments">
+    <div class="moment reveal">
+      <span class="moment-time">Incline o celular</span>
+      <p class="moment-desc">O ovo reage à gravidade. Rola. Escorrega. Ameaça cair. Você segura a respiração por um ovo que não existe.</p>
+    </div>
+    <div class="moment reveal">
+      <span class="moment-time">15 minutos depois</span>
+      <p class="moment-desc">O ovo aquece. Algo se move lá dentro. A casca começa a rachar.</p>
+    </div>
+    <div class="moment reveal">
+      <span class="moment-time">O que nasce</span>
+      <p class="moment-desc">Depende de você. Ou melhor, depende do ovo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy reveal">
+  <h2 class="section-label">Num mundo de notificações infinitas, fizemos um app sobre esperar.</h2>
+  <p class="section-text" style="margin:0 auto">Sem placares. Sem anúncios. Sem propósito aparente. Exatamente como deveria ser.</p>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="download">
+  <div class="reveal">
+    <h2 class="section-label">Adquira o ovo</h2>
+    <div class="price">$0.99</div>
+    <p class="price-note">compra única, sem assinaturas, sem surpresas</p>
+    <a href="#" class="cta">
+      <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      App Store
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>OVO Entretenimento Digital</p>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
