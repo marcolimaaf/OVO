@@ -370,6 +370,15 @@ footer a:hover{color:var(--gold)}
       <input type="email" name="email" placeholder="Seu e-mail" required>
       <button type="submit">Avise-me</button>
     </form>
+    <p class="section-text" style="margin:2.5rem auto 0;text-align:center;font-size:.75rem;color:var(--bronze)">Ou, se preferir reclamar sobre um ovo que ainda nem existe:</p>
+    <form id="ovo-reclamacao" class="notify-form" action="https://formsubmit.co/marcolimaaf@gmail.com" method="POST" style="margin-top:.8rem">
+      <input type="hidden" name="_subject" value="OVO — Reclamação formal sobre o ovo 🥚">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://marcolimaaf.github.io/OVO/?reclamou=1">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="reclamacao" placeholder="Descreva sua indignação com o ovo" required>
+      <button type="submit">Protocolar reclamação</button>
+    </form>
   </div>
 </section>
 
@@ -452,7 +461,6 @@ footer a:hover{color:var(--gold)}
     <a href="#" onclick="abrirModal('modal-termos');return false">Termos de Uso</a>
     <a href="#" onclick="abrirModal('modal-privacidade');return false">Política de Privacidade</a>
   </div>
-  <p style="margin-top:.5rem">contato@ovo.app.br</p>
 </footer>
 
 <script>
@@ -467,11 +475,17 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// Success message
+// Success messages
 if (window.location.search.includes('enviado=1')) {
   const form = document.getElementById('ovo-form');
   if (form) {
     form.outerHTML = '<div class="form-success"><h3>🥚 Anotado.</h3><p>Quando o ovo chocar, você será o primeiro a saber.</p></div>';
+  }
+}
+if (window.location.search.includes('reclamou=1')) {
+  const form = document.getElementById('ovo-reclamacao');
+  if (form) {
+    form.outerHTML = '<div class="form-success"><h3>🥚 Reclamação recebida.</h3><p>O ovo foi notificado e está profundamente indiferente.</p></div>';
   }
 }
 
